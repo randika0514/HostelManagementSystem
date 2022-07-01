@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="roomReservationContext" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.controller.DashboardFormController">
+   <children>
+      <TextField fx:id="txtResId" layoutX="106.0" layoutY="96.0" />
+      <TextField fx:id="txtDate" layoutX="386.0" layoutY="96.0" />
+      <Label layoutX="30.0" layoutY="98.0" text="Res.ID :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="327.0" layoutY="98.0" text="Date :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbStudentId" layoutX="30.0" layoutY="203.0" onAction="#setStudentDetailsOnAction" prefHeight="31.0" prefWidth="187.0" promptText="Student ID" />
+      <ComboBox fx:id="cmbRoomTypeId" layoutX="30.0" layoutY="308.0" onAction="#setRoomDetailsOnAction" prefHeight="31.0" prefWidth="166.0" promptText="Room Type ID" />
+      <TableView fx:id="tblReservation" layoutX="30.0" layoutY="427.0" prefHeight="371.0" prefWidth="865.0">
+        <columns>
+          <TableColumn fx:id="colResId" prefWidth="160.0" text="Res.ID" />
+          <TableColumn fx:id="colDate" prefWidth="177.0" text="Date" />
+            <TableColumn fx:id="colStudentId" prefWidth="193.0" text="Student ID" />
+            <TableColumn fx:id="colRoomTypeId" prefWidth="180.0" text="Room Type ID" />
+            <TableColumn fx:id="colStatus" prefWidth="154.0" text="Status" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtName" layoutX="334.0" layoutY="203.0" />
+      <Label layoutX="264.0" layoutY="205.0" text="Name :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTelNo" layoutX="615.0" layoutY="203.0" />
+      <Label layoutX="569.0" layoutY="205.0" text="Tel :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Separator layoutX="30.0" layoutY="184.0" prefHeight="0.0" prefWidth="865.0" />
+      <Label layoutX="30.0" layoutY="157.0" text="Student Details" textFill="#ff4d4d">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <Separator layoutX="30.0" layoutY="290.0" prefHeight="0.0" prefWidth="865.0" />
+      <Label layoutX="30.0" layoutY="262.0" text="Room Details" textFill="#ff4d4d">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtType" layoutX="293.0" layoutY="308.0" prefHeight="31.0" prefWidth="174.0" />
+      <Label layoutX="230.0" layoutY="310.0" text="Type :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtQty" layoutX="550.0" layoutY="308.0" prefHeight="31.0" prefWidth="76.0" />
+      <Label layoutX="498.0" layoutY="310.0" text="Qty :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtKeyMoney" layoutX="772.0" layoutY="308.0" prefHeight="31.0" prefWidth="120.0" />
+      <Label layoutX="659.0" layoutY="310.0" text="Key Money :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="709.0" layoutY="839.0" mnemonicParsing="false" onAction="#reserveOnAction" prefHeight="39.0" prefWidth="187.0" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-background-color: #0984e3;" text="Reserve" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="cmbStatus" layoutX="772.0" layoutY="357.0" prefHeight="31.0" prefWidth="120.0" promptText="Status" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0a3d62" height="59.0" layoutX="-1.0" stroke="#0a3d62" strokeType="INSIDE" width="936.0" />
+      <Label layoutX="314.0" layoutY="7.0" text="Room Reservation" textFill="WHITE">
+         <font>
+            <Font name="Forte" size="39.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="935.0" prefHeight="900.0" prefWidth="265.0" style="-fx-background-color: black; -fx-background-radius: 0 0 0 50; -fx-background-color: #0a3d62;">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#60a3bc" height="113.0" layoutX="33.0" layoutY="67.0" onDragDetected="#btnRegistrationOnAction" stroke="#079992" strokeType="INSIDE" width="200.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#82ccdd" height="113.0" layoutX="33.0" layoutY="229.0" stroke="#079992" strokeType="INSIDE" width="200.0" />
+            <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="67.0" onAction="#btnRegisterOnAction" prefHeight="113.0" prefWidth="200.0" text="Registration">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="229.0" onAction="#btnRoomOnAction" prefHeight="113.0" prefWidth="200.0" text="Rooms">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
